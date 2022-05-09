@@ -1,0 +1,30 @@
+//__texte couleur primaire
+.CprimaryText {
+  color: $colorprimary;
+  font-weight: bold;
+}
+// couleur vert
+.ColorGreen {
+  color: rgb(26, 94, 29);
+  font-weight: bold;
+}
+.retourAchats {
+  display: flex;
+  max-width: 100%;
+  height: 6rem;
+  background: #534f4f;
+  align-items: center;
+  i {
+    color: $colorprimary;
+    font-size: 3rem;
+    margin-left: 1rem;
+  }
+  a {
+    color: white;
+    font-size: 3rem;
+    margin-left: 2rem;
+  }
+  a:hover {
+    color: $colorprimary;
+  }
+}

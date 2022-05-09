@@ -1,0 +1,77 @@
+@font-face {
+  font-family: fontflowers;
+  src: url("../public/fonts/SendFlowers-Regular.ttf");
+}
+.toolbar {
+  display: flex;
+  max-width: 100%;
+  height: 10rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: $colorsecondary;
+  border-radius: 10px 10px 0px 0px;
+}
+.titlesite {
+  font-family: fontflowers, cursif;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  color: white;
+}
+
+nav {
+  display: flex;
+  max-width: 100%;
+  align-items: flex-end;
+  z-index: 2;
+
+  a {
+    max-width: 100%;
+    /* tous les liens a à l'intérieur de la balise nav */
+    float: left; /* effet flottant */
+
+    color: #ffffff; /* couleur du texte */
+    background: #534f4f; /* couleur de fond */
+    height: 36px; /* hauteur */
+    line-height: 33px; /* interligne */
+    padding: 0 10px; /* marges intérieur */
+    font-family: sans-serif; /* police d'écriture */
+    font-size: 13px; /* taille du texte */
+    transition: 0.5s; /* temps de transition lors du hover : une demi seconde */
+    i {
+      font-size: 1.5rem;
+      color: $colorprimary;
+      opacity: 0;
+    }
+  }
+}
+nav a:hover {
+  /* tous liens lors du survol dans la balise nav */
+  background: $colorprimary; /* couleur de fond */
+}
+.logophoto {
+  display: none;
+}
+
+/* responsive tablet*/
+@include screen-size(tablet) {
+  nav {
+    justify-content: flex-start;
+  }
+  nav a i {
+    opacity: 1;
+  }
+}
+/* responsive desktop*/
+@include screen-size(desktop) {
+  nav {
+    a {
+      padding: 0 60px;
+    }
+  }
+  .logophoto {
+    display: flex;
+    max-width: 120px;
+    margin-right: 2rem;
+  }
+}

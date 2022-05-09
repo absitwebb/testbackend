@@ -1,0 +1,22 @@
+/* démarrer projet sans marges intérieures et exterieures */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Ré-équilibrage du Rem face au Pixel pour des calculs simples */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.4rem; /* = 14px */
+  justify-content: center;
+  display: flex;
+}
+main {
+  width: 1300px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,107 @@
+.recapCommande {
+  display: flex;
+  justify-content: space-around;
+  background: gray;
+}
+#injectRecappanier {
+  display: flex;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  table {
+    max-width: 100%;
+    max-height: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    background: rgb(218, 213, 213);
+
+    td {
+      border: 2px solid black;
+
+      padding: 2rem;
+      font-size: 2rem;
+    }
+  }
+}
+// formulaire contact
+.formContact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: $colorsecondary;
+  color: white;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  h2 {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .champs {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-top: 4rem;
+    margin-right: 10rem;
+
+    input {
+      height: 3rem;
+      width: 30rem;
+      border: 1px black solid;
+      box-shadow: 4px 4px 0px black;
+    }
+  }
+  &_Name {
+    display: flex;
+    justify-content: space-between;
+  }
+  &_Address {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.formContactNone {
+  display: none;
+}
+
+.errorform {
+  color: rgb(238, 70, 70);
+}
+.errorformValid {
+  color: rgb(52, 161, 16);
+}
+
+.ValidCommand {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: $colorprimary;
+  color: white;
+  h1 {
+    font-size: 3rem;
+    color: black;
+    margin-top: 2rem;
+  }
+}
+.container-bloc-ConfirmCommand {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bloc-ConfirmCommand {
+  display: flex;
+  max-width: 50%;
+  max-height: 100%;
+  border: 1px black solid;
+  box-shadow: 6px 6px 0px black;
+  flex-direction: column;
+  background-color: $colorsecondary;
+  padding: 3rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}

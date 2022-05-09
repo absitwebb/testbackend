@@ -1,0 +1,211 @@
+// mixins pour responsive animation block containertop block 1
+@mixin block1($size) {
+  @if $size == mobile {
+    @keyframes block1 {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(+30px);
+      }
+    }
+  } @else if $size ==tablet {
+    @keyframes block1 {
+      0% {
+        opacity: 0;
+        transform: translateX(-350px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(-150px);
+      }
+    }
+  } @else if $size ==desktop {
+    @keyframes block1 {
+      0% {
+        opacity: 0;
+        transform: translateX(-90%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  }
+  animation-name: block1;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+// mixins pour responsive animation block containertop block 2
+@mixin block2($size) {
+  @if $size == mobile {
+    @keyframes block2 {
+      0% {
+        opacity: 0;
+        transform: translatey(-30%);
+      }
+      100% {
+        opacity: 1;
+        transform: translatey(0px);
+      }
+    }
+  } @else if $size ==desktop {
+    @keyframes block2 {
+      0% {
+        opacity: 0;
+        transform: translatey(-90%);
+      }
+      100% {
+        opacity: 1;
+        transform: translatey(0px);
+      }
+    }
+  } @else if $size ==tablet {
+    @keyframes block2 {
+      0% {
+        opacity: 0;
+        transform: translatey(-50%);
+      }
+      100% {
+        opacity: 1;
+        transform: translatey(0px);
+      }
+    }
+  }
+  animation-name: block2;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+// mixins pour responsive animation block containertop block3
+@mixin block3($size) {
+  @if $size == mobile {
+    @keyframes block3 {
+      0% {
+        opacity: 0;
+        transform: translatex(+30%);
+      }
+      100% {
+        opacity: 1;
+        transform: translatex(+0px);
+      }
+    }
+  } @else if $size ==tablet {
+    @keyframes _block3 {
+      0% {
+        opacity: 0;
+        transform: translatex(0px);
+      }
+      100% {
+        opacity: 1;
+        transform: translatex(+10px);
+      }
+    }
+  } @else if $size ==desktop {
+    @keyframes _block3 {
+      0% {
+        opacity: 0;
+        transform: translatex(+30%);
+      }
+      100% {
+        opacity: 1;
+        transform: translatex(+10px);
+      }
+    }
+  }
+  animation-name: block3;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+// mixins pour responsive animation bloc containercameras
+@mixin blockcameras($size) {
+  @if $size == mobile {
+    @keyframes blockcameras {
+      0% {
+        opacity: 0;
+        transform: translatey(+50%);
+      }
+      100% {
+        opacity: 1;
+        transform: translatey(0px);
+      }
+    }
+  } @else if $size ==desktop {
+    @keyframes blockcameras {
+      0% {
+        opacity: 0;
+        transform: translatey(-90%);
+      }
+      100% {
+        opacity: 1;
+        transform: translatey(0px);
+      }
+    }
+  }
+  animation-name: blockcameras;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+
+// mixins pour responsive animation bloc bannière
+@mixin blockbanniere($size) {
+  @if $size == mobile {
+    @keyframes blockbanniere {
+      0% {
+        opacity: 0;
+        transform: translateX(+0%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(+200%);
+      }
+    }
+  } @else if $size ==desktop {
+    @keyframes blockbanniere {
+      0% {
+        opacity: 0;
+        transform: translatex(+0%);
+      }
+      100% {
+        opacity: 1;
+        transform: translatex(+300px);
+      }
+    }
+  }
+  animation-name: blockbanniere;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+// mixins pour responsive animation bloc bannière text
+@mixin blockbanniereText($size) {
+  @keyframes blockbanniereText {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  animation-name: blockbanniereText;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+}
+
+@mixin blockVintage() {
+  @keyframes blockVintage {
+    0% {
+      border: 1px black solid;
+      box-shadow: 8px 8px 0px black;
+    }
+    100% {
+      border: 1px $colorprimary solid;
+      box-shadow: 4px 4px 0px $colorprimary;
+    }
+  }
+  animation-name: blockVintage;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}

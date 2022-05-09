@@ -1,0 +1,63 @@
+.container-produit {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+.bloc-options {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-height: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background: #534f4f;
+  .bloc-choose {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    font-size: 2rem;
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+    label {
+      color: white;
+      margin-right: 1.5rem;
+    }
+    select {
+      font-size: 1.7rem;
+      color: black;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .buttonValid {
+    height: 30px;
+    font-size: 2rem;
+  }
+  .buttonValid:hover {
+    background: $colorprimary;
+  }
+}
+// _____responsive_______________
+@include screen-size(tablet) {
+  .bloc-options {
+    width: 50%;
+  }
+}
+@include screen-size(desktop) {
+  .container-produit {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .bloc-options {
+    width: 40%;
+    height: 100px;
+    margin-left: 15rem;
+    align-items: center;
+
+    .buttonValid {
+      height: 30px;
+      font-size: 2rem;
+      width: 80%;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.buttonsuite {
+  width: 25%;
+  height: 40px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  background-color: $colorprimary;
+  color: white;
+  cursor: pointer;
+}
+.buttonsuite:hover {
+  background-color: $colorsecondary;
+}
