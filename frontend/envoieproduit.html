@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sass/style.css" />
+    <title>envoieproduit</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="formContact">
+          <form id="formenvoieproduit" name="formenvoieproduit">
+            <h2>Merci de rentrer vos informations personnelles,</h2>
+            <h2>puis validez votre commande</h2>
+            <!--____________________Nom prénom____________________-->
+            <div class="formContact_Name">
+              <!--_____________title___________-->
+              <div class="champs">
+                <label for="title"Title</label>
+                <input
+                  id="title"
+                  name="title"
+                  type="text"
+                  placeholder="titre"
+                />
+                <span class="errorform"> </span>
+              </div>
+              <!--_____________description___________-->
+              <div class="champs">
+                <label for="description">Description</label>
+                
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                <span class="errorform"> </span>
+              </div>
+            </div>
+            <!--_________________adresse client__________________-->
+            <div class="formContact_Address">
+              <!--_____________fichier image___________-->
+              <div class="champs">
+                <label for="adresse">fichierimage</label>
+                <input
+                  id="fileimage"
+                  name="fileimage"
+                  type="file"
+                  placeholder="image"
+                />
+                <span class="errorform"> </span>
+              </div>
+              <!--_____________ville___________-->
+              <div class="champs">
+                <label for="price">prix</label>
+                <input
+                  id="price"
+                  name="ville"
+                  type="price"
+                  placeholder="prix"
+                />
+                <span class="errorform"> </span>
+              </div>
+            </div>
+            
+            <!--_____________bouton___________-->
+            <button class="buttonsuite" type="submit">Commander</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!--______________script javascript____________-->
+    <script src="./pagesjs/fonctions.js"></script>
+    <script src="./pagesjs/envoiproduit.js"></script>
+  </body>
+</html>
