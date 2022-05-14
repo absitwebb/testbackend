@@ -70,7 +70,7 @@ a {
 }
 
 .buttonsuite {
-  width: 25%;
+  max-width: 100%;
   height: 40px;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1521,6 +1521,10 @@ nav a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -1586,6 +1590,7 @@ nav a:hover {
 
 .errorform {
   color: #ee4646;
+  font-size: 2rem;
 }
 
 .errorformValid {

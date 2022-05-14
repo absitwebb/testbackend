@@ -20,6 +20,9 @@ let valid = true;
 // on regarde se qui est taper dans le formulaire
 FormContactid2.addEventListener("submit", (e) => {
   e.preventDefault();
+  let tokens = JSON.parse(localStorage.getItem("tokens"));
+  let userId = tokens.userId;
+  let token = tokens.token;
   // variable qui récupère prénom
   let titleForm = inputsForm["title"].value;
   // variable qui récupère nom
@@ -34,6 +37,7 @@ FormContactid2.addEventListener("submit", (e) => {
     description: textForm,
     imageUrl: imgForm,
     price: priceForm,
+    userId: userId,
   };
 
   const EnvoiConfirmServer = async () => {
@@ -43,6 +47,7 @@ FormContactid2.addEventListener("submit", (e) => {
       body: JSON.stringify(envoieProduitobj),
       headers: {
         "Content-Type": "application/json",
+        Authorization: `${userId} ${token}`,
       },
     })
       .then((res) => res.json())

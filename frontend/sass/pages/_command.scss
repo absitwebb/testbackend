@@ -25,6 +25,7 @@
 // formulaire contact
 .formContact {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   max-width: 100%;
@@ -68,7 +69,9 @@
 
 .errorform {
   color: rgb(238, 70, 70);
+  font-size: 2rem;
 }
+
 .errorformValid {
   color: rgb(52, 161, 16);
 }

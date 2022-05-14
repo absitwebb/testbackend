@@ -1,3 +1,11 @@
+//variable img bannière
+let Imgbannierelogin = "public/img/login.png";
+
+//affiche img et text dans bannière vintage
+// fonctions du fichier fonctions.js
+affichImgBanniere(Imgbannierelogin);
+AffichTextBanniere("bienvenue");
+
 //-------------------------on déclare variables et constantes-----------------------------------
 
 const ContainerContact = document.querySelector(".formContact");
@@ -6,12 +14,14 @@ const ContainerValidCommande = document.querySelector(".formeuserconnect");
 //------------------------------------------------------------
 // vérification formulaire
 let FormContactid2 = document.forms["formeuserconnect"];
-let error = document.querySelectorAll(".errorform");
+let messerror = document.querySelector(".container-error");
+let error = messerror.querySelector(".errorform");
+
 let inputsForm = document
   .getElementById("formeuserconnect")
   .getElementsByTagName("input");
 
-let valid = true;
+let valid = false;
 
 // on regarde se qui est taper dans le formulaire
 FormContactid2.addEventListener("submit", (e) => {
@@ -40,14 +50,22 @@ FormContactid2.addEventListener("submit", (e) => {
       .then((res) => res.json())
       .then((data) => {
         tokens = data;
-
-        localStorage.setItem("tokens", JSON.stringify(tokens));
-        //let cletoken = Resproduct.token;
-        location.assign("../frontend/produit.html");
-        console.log(tokens.userId);
+        //si token de contient pas d'erreur
+        if (!tokens.error == true) {
+          //on enregistre token dans la base donnée
+          localStorage.setItem("tokens", JSON.stringify(tokens));
+          // on ouvre la page tous produits
+          location.assign("../frontend/produit.html");
+        } else {
+          error.innerHTML = tokens.error;
+          console.log(tokens.error);
+        }
       })
-
-      .catch((err) => console.log("ereur:" + err));
+      .catch((err) => {
+        console.log("ereur:" + err);
+        valid = false;
+        console.log(valid);
+      });
   };
   Envoiloginuser();
 });
