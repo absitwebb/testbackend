@@ -1,0 +1,14 @@
+.formUserConnect {
+  display: flex;
+}
+
+.formUserRegistration {
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 70%;
+  }
+  h1 {
+    margin-top: 2rem;
+  }
+}

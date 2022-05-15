@@ -1521,10 +1521,6 @@ nav a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -1647,5 +1643,29 @@ nav a:hover {
   padding: 3rem;
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+
+.formUserConnect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.formUserRegistration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.formUserRegistration img {
+  width: 70%;
+}
+
+.formUserRegistration h1 {
+  margin-top: 2rem;
 }
 /*# sourceMappingURL=style.css.map */
