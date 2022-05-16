@@ -1668,4 +1668,25 @@ nav a:hover {
 .formUserRegistration h1 {
   margin-top: 2rem;
 }
+
+.injectUserRegistration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.containerUsernewRegistration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.injectUserRegistrationNone {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

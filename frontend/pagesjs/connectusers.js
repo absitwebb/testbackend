@@ -8,6 +8,10 @@ AffichTextBanniere("bienvenue");
 
 //-------------------------on déclare variables et constantes-----------------------------------
 
+let injectUserRegistration = document.querySelector(".injectUserRegistration");
+let buttonnewregistre = document
+  .querySelector(".formUserRegistration")
+  .querySelector("#essai");
 const ContainerContact = document.querySelector(".formContact");
 const ContainerValidCommande = document.querySelector(".formeuserconnect");
 
@@ -68,4 +72,46 @@ FormContactid2.addEventListener("submit", (e) => {
       });
   };
   Envoiloginuser();
+});
+
+buttonnewregistre.addEventListener("click", () => {
+  injectUserRegistration.innerHTML = `
+<div class="containerUsernewRegistration">
+ <div class="formUserConnect_form">
+            <!--____________________formulaire____________________-->
+          <form method="post" id="formeuserconnect" name="formeuserconnect">
+            <h2>Nouveau utilisateur...</h2>
+
+            <!--_____________email___________-->
+            <div class="champs">
+              <label for="email">email</label>
+              <input
+                id="connectemail"
+                name="connectemail"
+                type="text"
+                placeholder="email"
+              />
+            
+            </div>
+            <!--_____________passeword___________-->
+            <div class="champs">
+              <label for="passeword">mot de passe</label>
+
+              <input
+                type="text"
+                name="passeword"
+                id="passeword"
+                placeholder="mot de passe"
+              />             
+                          </div>                         
+
+            <!--_____________bouton___________-->
+            <button class="buttonsuite" type="submit">connexion</button>
+                    </form>
+          <div class="container-error">
+ <span class="errorform"> </span>
+ </div>
+          </div>
+</div>
+  `;
 });
