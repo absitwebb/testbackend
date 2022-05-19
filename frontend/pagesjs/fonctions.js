@@ -303,3 +303,34 @@ const EnvoiConfirmServer = async () => {
 
     .catch((err) => console.log("ereur:" + err));
 };
+
+//--------------- connexion utilisateur--------------------------
+const Envoiloginuser = async () => {
+  // envoie formulaire et produit vers serveur
+  const envoiServ = fetch("http://localhost:3000/api/auth/login", {
+    method: "POST",
+    body: JSON.stringify(envoieuserconnect),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      tokens = data;
+      //si token de contient pas d'erreur
+      if (!tokens.error == true) {
+        //on enregistre token dans la base donnée
+        localStorage.setItem("tokens", JSON.stringify(tokens));
+        // on ouvre la page tous produits
+        location.assign("../frontend/produit.html");
+      } else {
+        error.innerHTML = tokens.error;
+        console.log(tokens.error);
+      }
+    })
+    .catch((err) => {
+      console.log("ereur:" + err);
+      valid = false;
+      console.log(valid);
+    });
+};
