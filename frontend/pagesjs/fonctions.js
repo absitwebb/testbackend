@@ -334,3 +334,25 @@ const Envoiloginuser = async () => {
       console.log(valid);
     });
 };
+
+//--------------- création nouveau utilisateur--------------------------
+const EnvoiNewUser = async () => {
+  // envoie formulaire et produit vers serveur
+  const envoiServ = fetch("http://localhost:3000/api/auth/signup", {
+    method: "POST",
+    body: JSON.stringify(envoieuserconnect),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      tokens = data;
+      //si token de contient pas d'erreur
+    })
+    .catch((err) => {
+      console.log("ereur:" + err);
+      valid = false;
+      console.log(valid);
+    });
+};

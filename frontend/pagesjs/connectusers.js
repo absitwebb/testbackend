@@ -43,7 +43,13 @@ FormContactid2.addEventListener("submit", (e) => {
     password: passwordForm,
   };
   if (id == "new") {
-    console.log("essai");
+    EnvoiNewUser();
+    error.innerHTML =
+      "connexion crée: vous allez être redirigé vers la page connexion";
+    function renvoiConnect() {
+      location.assign("../frontend/userconnect.html");
+    }
+    setTimeout(renvoiConnect, 8000);
   } else {
     Envoiloginuser();
   }
