@@ -11,14 +11,19 @@
     <main>
       <section>
         <div class="formContact">
-          <form method ="post" id="formenvoieproduit" name="formenvoieproduit"  >
+          <form
+            method="post"
+            id="formenvoieproduit"
+            name="formenvoieproduit"
+            enctype="multipart/form-data"
+          >
             <h2>Merci de rentrer vos informations personnelles,</h2>
             <h2>puis validez votre commande</h2>
             <!--____________________Nom prénom____________________-->
             <div class="formContact_Name">
               <!--_____________title___________-->
               <div class="champs">
-                <label for="title"Title</label>
+                <label for="title">title</label>
                 <input
                   id="title"
                   name="title"
@@ -30,8 +35,13 @@
               <!--_____________description___________-->
               <div class="champs">
                 <label for="description">Description</label>
-                
-                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+                <textarea
+                  name="description"
+                  id="description"
+                  cols="30"
+                  rows="10"
+                ></textarea>
                 <span class="errorform"> </span>
               </div>
             </div>
@@ -39,10 +49,10 @@
             <div class="formContact_Address">
               <!--_____________fichier image___________-->
               <div class="champs">
-                <label for="adresse">fichierimage</label>
+                <label for="image">fichierimage</label>
                 <input
-                  id="fileimage"
-                  name="fileimage"
+                  id="image"
+                  name="image"
                   type="file"
                   placeholder="image"
                 />
@@ -53,14 +63,14 @@
                 <label for="price">prix</label>
                 <input
                   id="price"
-                  name="ville"
-                  type="price"
+                  name="price"
+                  type="number"
                   placeholder="prix"
                 />
                 <span class="errorform"> </span>
               </div>
             </div>
-            
+
             <!--_____________bouton___________-->
             <button class="buttonsuite" type="submit">Commander</button>
           </form>

@@ -9,7 +9,7 @@ AffichTextBanniere("bienvenue");
 // on récupère l'adresse url et id
 let parametre = new URL(document.location).searchParams;
 let id = parametre.get("id");
-console.log(id);
+
 //-------------------------on déclare variables et constantes-----------------------------------
 
 const ContainerContact = document.querySelector(".formContact");
@@ -42,6 +42,7 @@ FormContactid2.addEventListener("submit", (e) => {
     email: EmailForm,
     password: passwordForm,
   };
+  // si demande création nouveau utilisateur
   if (id == "new") {
     EnvoiNewUser();
     error.innerHTML =
@@ -50,7 +51,9 @@ FormContactid2.addEventListener("submit", (e) => {
       location.assign("../frontend/userconnect.html");
     }
     setTimeout(renvoiConnect, 8000);
-  } else {
+  }
+  // si connexion utilisateur déja enregistré
+  else {
     Envoiloginuser();
   }
 });

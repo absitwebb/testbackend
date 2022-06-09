@@ -356,3 +356,26 @@ const EnvoiNewUser = async () => {
       console.log(valid);
     });
 };
+
+//-------------------------------------------------------
+/* On récupère les tokens depuis le localStorage */
+const Recuptoken = () => {
+  let tokens = JSON.parse(localStorage.getItem("tokens"));
+  if (!tokens) {
+    /* Traitement dans le cas où aucun token n'existe dans le localStorage */
+  }
+
+  /* Le localStorage stocke les données sous forme de chaines de caractères nous transformons donc la donnée en JSON */
+  let userId = tokens.userId;
+  let token = tokens.token;
+
+  /* On créer l'en-tête Authorization contenant le JWT */
+  const headers = new Headers();
+  headers.append("Authorization", `${userId} ${token}`);
+
+  window["options"] = {
+    method: "GET",
+    mode: "cors",
+    headers,
+  };
+};

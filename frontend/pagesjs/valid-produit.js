@@ -10,15 +10,16 @@ AffichTextBanniere("Commander");
 // on récupère l'adresse url et id
 let parametre = new URL(document.location).searchParams;
 let id = parametre.get("id");
-
+// on réupère le token pour api sécurisée
+Recuptoken();
 //récupère data du produit dans lien flex
 const RecupProduitValid = async () => {
-  // attention pour url on utilise guillemets du 7
-  await fetch(`http://localhost:3000/api/stuff/${id}`)
+  //options est envoyés par recuptoken
+  await fetch(`http://localhost:3000/api/stuff/${id}`, options)
     .then((res) => res.json())
     .then((data) => {
       ProduitValidData = data;
-      // console.log(ProduitValidData);
+      console.log(ProduitValidData);
     })
     .catch((err) => console.log("ereur:" + err));
 };
@@ -59,8 +60,6 @@ const ajoutPanier = () => {
   buttonStorage.addEventListener("click", () => {
     // on verifie si il y a des produits dans le localstorage
     let produitTable = JSON.parse(localStorage.getItem("produit"));
-    // on récupère l'option lentilles sélectionnée
-    let selectopt = document.getElementById("lentilles");
 
     //on rajoute dans l'objet ProduitValidData deux éléments
     // le choix de la lentille et la quantité
@@ -71,7 +70,7 @@ const ajoutPanier = () => {
       // on crée un tableau vide
       produitTable = [];
 
-      //on met dans le tableau le produit et option sélectionnée
+      //on met dans le tableau le produit  sélectionnée
       produitTable.push(fusionproduitlentilles);
 
       //on stock  dans le localstorage le produit sous forme de string
@@ -86,10 +85,7 @@ const ajoutPanier = () => {
       for (i = 0; i < produitTable.length; i++) {
         // _______on verifie si le produit dans le tableau (localstorage) est égal au produit (selectionné)
         //qu'il y à dans la boucle for ainsi que l'option lentilles
-        if (
-          produitTable[i]._id == ProduitValidData._id &&
-          produitTable[i].lentillechoix == selectopt.value
-        ) {
+        if (produitTable[i]._id == ProduitValidData._id) {
           // si le produit est le même on augmente la quantité____________________
           return (
             produitTable[i].quantite++,
